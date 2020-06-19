@@ -17,12 +17,12 @@ import retrofit2.http.Path
 import java.util.*
 
 interface GitHubService {
-    @GET("orgs/{org}/repos?per_page=100")
+    @GET("orgs/{org}/repos?per_page=1000")
     fun getOrgReposCall(
         @Path("org") org: String
     ): Call<List<Repo>>
 
-    @GET("repos/{owner}/{repo}/contributors?per_page=100")
+    @GET("repos/{owner}/{repo}/contributors?per_page=1000")
     fun getRepoContributorsCall(
         @Path("owner") owner: String,
         @Path("repo") repo: String
